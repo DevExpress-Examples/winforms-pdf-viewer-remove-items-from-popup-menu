@@ -1,6 +1,8 @@
 ﻿Imports System.Windows.Forms
 Imports DevExpress.XtraPdfViewer
 Imports DevExpress.XtraBars
+Imports DevExpress.XtraPdfViewer.Extensions
+Imports DevExpress.XtraPdfViewer.Commands
 
 Namespace CustomPopupMenu
     Partial Public Class Form1
@@ -19,12 +21,8 @@ Namespace CustomPopupMenu
 
             ' Remove Rotate Clockwise and Rotate Counterclockwise items from the Page Content popup menu.
             If e.PopupMenuKind = PdfPopupMenuKind.PageContent Then
-                For i As Integer = e.ItemLinks.Count - 1 To 0 Step -1
-                    Dim link As BarItemLink = e.ItemLinks(i)
-                    If link.Caption.Contains("Rotate") Then
-                        e.ItemLinks.Remove(link)
-                    End If
-                Next i
+                e.ItemLinks.Remove(e.ItemLinks.GetPdfViewerBarItemLink(PdfViewerCommandId.RotatePageClockwise))
+                e.ItemLinks.Remove(e.ItemLinks.GetPdfViewerBarItemLink(PdfViewerCommandId.RotatePageCounterclockwise))
             End If
         End Sub
     End Class
