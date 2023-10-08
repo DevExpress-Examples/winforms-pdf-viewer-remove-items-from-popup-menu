@@ -1,9 +1,10 @@
-﻿Imports System.Windows.Forms
+Imports System.Windows.Forms
 Imports DevExpress.XtraPdfViewer
 Imports DevExpress.XtraBars
 
 Namespace CustomPopupMenu
-    Partial Public Class Form1
+
+    Public Partial Class Form1
         Inherits Form
 
         Public Sub New()
@@ -11,7 +12,7 @@ Namespace CustomPopupMenu
             pdfViewer1.LoadDocument("..\..\Demo.pdf")
         End Sub
 
-        Private Sub pdfViewer1_PopupMenuShowing(ByVal sender As Object, ByVal e As PdfPopupMenuShowingEventArgs) Handles pdfViewer1.PopupMenuShowing
+        Private Sub pdfViewer1_PopupMenuShowing(ByVal sender As Object, ByVal e As PdfPopupMenuShowingEventArgs)
             ' Hide the popup menu for the bookmark tree.
             If e.PopupMenuKind = PdfPopupMenuKind.BookmarkTree Then
                 e.ItemLinks.Clear()
@@ -21,10 +22,8 @@ Namespace CustomPopupMenu
             If e.PopupMenuKind = PdfPopupMenuKind.PageContent Then
                 For i As Integer = e.ItemLinks.Count - 1 To 0 Step -1
                     Dim link As BarItemLink = e.ItemLinks(i)
-                    If link.Caption.Contains("Rotate") Then
-                        e.ItemLinks.Remove(link)
-                    End If
-                Next i
+                    If link.Caption.Contains("Rotate") Then e.ItemLinks.Remove(link)
+                Next
             End If
         End Sub
     End Class
