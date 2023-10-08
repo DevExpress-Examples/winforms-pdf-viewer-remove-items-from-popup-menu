@@ -12,9 +12,9 @@ This example shows how to hide the popup menu for the bookmark tree and remove s
 
 ## Implementation Details
 
-To customize items of the PDF Viewer's popup menu, handle the []() <a href="https://documentation.devexpress.com/WindowsForms/DevExpress.XtraPdfViewer.PdfViewer.PopupMenuShowing.event">PdfViewer.PopupMenuShowing</a> event. This event fires every time a user opens a popup menu in the PDF Viewer. 
+To customize items of the PDF Viewer's popup menu, handle the [PdfViewer.PopupMenuShowing](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPdfViewer.PdfViewer.PopupMenuShowing) event. This event fires every time a user opens a popup menu in the PDF Viewer. 
 
-Each popup menu type has a unique set of bar items that are located in the bar item link collection. To access a bar item link collection, check the <a href="https://documentation.devexpress.com/WindowsForms/DevExpress.XtraPdfViewer.PdfPopupMenuShowingEventArgs.PopupMenuKind.property">PdfPopupMenuShowingEventArgs.PopupMenuKind</a> property value to determine the menu type and use the <a href="https://documentation.devexpress.com/WindowsForms/DevExpress.XtraPdfViewer.PdfPopupMenuShowingEventArgs.ItemLinks.property">PdfPopupMenuShowingEventArgs.ItemLinks</a> property.
+Each popup menu type has a unique set of bar items that are located in the bar item link collection. To access a bar item link collection, check the [PdfPopupMenuShowingEventArgs.PopupMenuKind](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPdfViewer.PdfPopupMenuShowingEventArgs.PopupMenuKind) property value to determine the menu type and use the [PdfPopupMenuShowingEventArgs.ItemLinks](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPdfViewer.PdfPopupMenuShowingEventArgs.ItemLinks) property.
 
 To hide a popup menu, clear all items from the bar item link collection. To remove an item from the popup menu, find the item by its command ID and then remove it.
 
