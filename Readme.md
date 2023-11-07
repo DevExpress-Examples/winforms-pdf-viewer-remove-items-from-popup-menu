@@ -8,7 +8,7 @@
 
 The [WinForms PDF Viewer](https://www.devexpress.com/products/net/controls/winforms/pdf-viewer/) has several types of popup menus the user can invoke for bookmark options, bookmark tree, page content, a thumbnail, and thumbnail options. 
 
-This example shows how to hide the popup menu for the bookmark tree and remove specific items from the page content popup menu.
+This example shows how to add a new item, hide the popup menu for the bookmark tree, and remove specific items from the page content popup menu.
 
 ## Implementation Details
 
